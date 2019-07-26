@@ -1,5 +1,5 @@
 import React from 'react';
-import {Menu, Icon} from 'antd';
+import { Menu, Icon } from 'antd';
 const SubMenu = Menu.SubMenu;
 
 export class Header extends React.Component{
