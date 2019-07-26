@@ -1,1 +1,14 @@
-@import '~antd/dist/antd.css'
+@import '~antd/dist/antd.css';
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.header-title{
+    margin-top:20px;
+    text-align: center;
+}
+.header-description{
+    text-align: justify;
+}

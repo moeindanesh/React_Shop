@@ -1,9 +1,9 @@
 import React from 'react';
-import { Row, Col } from 'antd';
 import './App.css';
 
 
 import { Header } from './Header';
+import { Welcome } from './Welcome';
 
 
 
@@ -11,14 +11,12 @@ import { Header } from './Header';
 export class App extends React.Component{
   render(){
     return(
-      <Row type="flex" justify="center">
-        <Col>
-          <Header selectedMenu="home"/>
-          {/* <Welcome />
-          <Products />
-          <Footer /> */}
-        </Col>
-      </Row>
+      <div>
+        <Header selectedMenu="home"/>
+        <Welcome title="Welcome To My Shop" />
+      </div>
+      
+
     )
   }
 }
