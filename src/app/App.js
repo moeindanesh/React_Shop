@@ -2,8 +2,8 @@ import React from 'react';
 import './App.css';
 
 
-import { Header } from './Header';
-import { Welcome } from './Welcome';
+import { Header } from './section/Header';
+import { Welcome } from './section/Welcome';
 
 
 
