@@ -1,5 +1,7 @@
 import React from 'react';
 import { Row, Col, Menu, Icon } from 'antd';
+import { Link } from 'react-router-dom';
+
 const SubMenu = Menu.SubMenu;
 
 export class Header extends React.Component{
@@ -25,7 +27,7 @@ export class Header extends React.Component{
                 mode="horizontal"
                 selectedKeys={[this.state.selectedKey]}>
                 <Menu.Item key="home">
-                    <Icon type="home" />Home
+                <Link to="/"> <Icon type="home" />Home</Link>
                 </Menu.Item>
                 <Menu.Item key="products">
                     <Icon type="appstore" /> Products
@@ -38,7 +40,7 @@ export class Header extends React.Component{
                     <Menu.Item key="phone"><Icon type="phone" /> Phone</Menu.Item>
                 </SubMenu>
                 <Menu.Item key="about">
-                <Icon type="smile" /> About Us
+                <Link to="/about"><Icon type="smile" /> About Us</Link>
                 </Menu.Item>
                 </Menu>
             </Col>

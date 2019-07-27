@@ -8,15 +8,13 @@ import { Welcome } from './section/Welcome';
 
 
 
-export class App extends React.Component{
+export class Home extends React.Component{
   render(){
     return(
       <div>
         <Header selectedMenu="home"/>
         <Welcome title="Welcome To My Shop" />
       </div>
-      
-
     )
   }
 }
