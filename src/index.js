@@ -6,6 +6,8 @@ import { BrowserRouter as Router, Route, hashHistory } from "react-router-dom";
 
 import { About } from './About';
 import { Home } from './Home';
+import { Telegram } from './Telegram';
+import { Phone } from './Phone';
 
 
 export class App extends React.Component{
@@ -13,7 +15,9 @@ export class App extends React.Component{
     return(
       <Router>
         <Route path="/" exact component={Home} />
-        <Route path="/about" exact component={About} />
+        <Route path="/about" component={About} />
+        <Route path="/telegram" component={Telegram} />
+        <Route path="/phone" component={Phone} />
       </Router>
       
 
