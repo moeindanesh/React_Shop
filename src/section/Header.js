@@ -30,7 +30,7 @@ export class Header extends React.Component{
                   <Link to="/"> <Icon type="home" />Home</Link>
                 </Menu.Item>
                 <Menu.Item key="products">
-                    <Link to="/moein"><Icon type="appstore" /> Products</Link>
+                    <Link to="/products"><Icon type="appstore" /> Products</Link>
                 </Menu.Item>
                 <Menu.Item key="cart">
                 <Icon type="shopping-cart" /> cart

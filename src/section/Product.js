@@ -1,12 +1,21 @@
 import React from 'react';
-import { Row, Col } from 'antd';
+import { Card, Tag } from 'antd';
+const { Meta } = Card;
+
 
 
 
 export class Product extends React.Component{
     render(){
+        let details = this.props.details;
         return(
-            <h1>Product</h1>
+            <Card
+                hoverable
+                style={{ margin:'auto 15px 10px' }}
+                cover={<img alt="example" src={details.image} />}
+            >
+            <Meta title={details.title} description={details.description} />
+            </Card>
         )
     }
 }

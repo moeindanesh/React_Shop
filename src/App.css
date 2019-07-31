@@ -5,10 +5,14 @@
     padding: 0;
 }
 
-.header-title{
+.header-title, .products-title{
     margin-top:20px;
     text-align: center;
 }
 .header-description{
     text-align: justify;
+}
+
+.products-row{
+    margin: 20px auto;
 }

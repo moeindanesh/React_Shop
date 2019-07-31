@@ -10,6 +10,7 @@ import { Home } from './Home';
 import { Telegram } from './Telegram';
 import { Phone } from './Phone';
 import { Products } from './Products';
+import data from './data';
 
 
 export class App extends React.Component{
@@ -24,10 +25,10 @@ export class App extends React.Component{
     return(
       <Router>
         <Route path="/" exact component={Home} />
-        <Route path="/about" component={About} />
+        <Route path="/about" component={About}/>
         <Route path="/telegram" component={Telegram} />
         <Route path="/phone" component={Phone} />
-        <Route path="/products" component={Products} />
+        <Route path="/products" render={ () => <Products productData={this.state.productData} />}/>
       </Router>
       
 
