@@ -34,12 +34,12 @@ export default class App extends React.Component{
 
   removeOfCart(key){
     let productKey = key.key;
-    let i = this.state.orders.indexOf(productKey);
+    let i = this.state.orders.indexOf(this.state.orders[productKey]);
+    console.log(i);
     if(i != -1){
       this.setState((state) => {
         orders: state.orders.splice(i, 1)
       })
-      console.log(this.state.orders);
       cookies.set('orders', this.state.orders, { path: '/' });
     }
   }
