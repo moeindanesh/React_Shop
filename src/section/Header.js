@@ -13,7 +13,6 @@ export class Header extends React.Component{
       this.handleClick = this.handleClick.bind(this)
     }
     handleClick(e){
-      console.log(`clicked`);
       this.setState({
         selectedKey: e.key
       })

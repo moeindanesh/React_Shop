@@ -16,3 +16,12 @@
 .products-row{
     margin: 20px auto;
 }
+
+.cart-button{
+    position: fixed;
+    bottom: 20px;
+    right: 40px;
+}
+.cart-num{
+    color:red;
+}

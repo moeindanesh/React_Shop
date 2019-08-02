@@ -2,38 +2,38 @@ import React from 'react';
 import './App.css';
 import ReactDOM from 'react-dom';
 import { BrowserRouter as Router, Route, hashHistory } from "react-router-dom";
-import Data from './data';
+
 
 
 import { About } from './About';
 import { Home } from './Home';
 import { Telegram } from './Telegram';
 import { Phone } from './Phone';
-import { Products } from './Products';
-import data from './data';
+import App from './App';
 
 
-export class App extends React.Component{
-  constructor(props){
+export class Index extends React.Component{
+
+    constructor(props){
     super(props);
 
-    this.state = {
-      productData: Data
-    }
+    
   }
+
   render(){
     return(
+      <div>
       <Router>
         <Route path="/" exact component={Home} />
         <Route path="/about" component={About}/>
         <Route path="/telegram" component={Telegram} />
         <Route path="/phone" component={Phone} />
-        <Route path="/products" render={ () => <Products productData={this.state.productData} />}/>
+        <Route path="/products" component={App}/>
+        {/* <Route path="/products" render={ () => <Products productData={this.state.productData} addToCart={this.addToCart} orders={this.state.orders} removeOfCart={this.removeOfCart} />}/> */}
       </Router>
-      
-
+      </div>
     )
   }
 }
 
-ReactDOM.render(<App />, document.getElementById('root'));
+ReactDOM.render(<Index />, document.getElementById('root'));

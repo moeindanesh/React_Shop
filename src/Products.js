@@ -1,13 +1,14 @@
 import React from 'react';
 import { Row, Col } from 'antd';
+import PropTypes from 'prop-types';
+
 
 import Chunk from './helper';
 import './App.css';
 
 
-import { Header } from './section/Header';
 import { Product } from './section/Product';
-import { Welcome } from './section/Welcome';
+
 
 
 export class Products extends React.Component{
@@ -20,12 +21,13 @@ export class Products extends React.Component{
 
     this.renderRow = this.renderRow.bind(this);
     this.renderProduct = this.renderProduct.bind(this);
+
   }
 
   renderProduct(key){
     return(
       <Col key={key} span={4}>
-        <Product details={this.props.productData[key]} />
+        <Product index={key} addToCart={this.props.addToCart} details={this.props.productData[key]} orders={this.props.orders} />
       </Col>
     )
   }
@@ -40,8 +42,6 @@ export class Products extends React.Component{
   render(){
     return(
       <div>
-        <Header selectedMenu="products"/>
-        <Welcome title="Products"/>
         <Row >
           <Col span={24}>
             <Row>
@@ -54,4 +54,9 @@ export class Products extends React.Component{
 
     )
   }
+}
+Products.propTypes = {
+  addToCart: PropTypes.func.isRequired,
+  productData: PropTypes.object.isRequired
+
 }
