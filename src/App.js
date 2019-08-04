@@ -10,7 +10,7 @@ import { Header } from './section/Header';
 import { Welcome } from './section/Welcome';
 
 const cookies = new Cookies();
-
+let newState = [];
 export default class App extends React.Component{
   constructor(props){
     super(props);
@@ -25,22 +25,26 @@ export default class App extends React.Component{
   addToCart(key){
     [key] = key.split('|');
     if(this.state.productData[key].available){
-      this.setState((state) => {
-        orders: state.orders.push(key)
+
+      newState = this.state.orders;
+      newState.push(key);
+      this.setState({
+        orders: newState
       });
-      cookies.set('orders', this.state.orders, { path: '/' });
+      cookies.set('orders', newState, { path: '/' });
     }
   }
 
   removeOfCart(key){
     let productKey = key.key;
-    let i = this.state.orders.indexOf(this.state.orders[productKey]);
-    console.log(i);
+    let i = this.state.orders.indexOf(productKey);
     if(i != -1){
-      this.setState((state) => {
-        orders: state.orders.splice(i, 1)
+      newState = this.state.orders;
+      newState.splice(i, 1);
+      this.setState({
+        orders: newState
       })
-      cookies.set('orders', this.state.orders, { path: '/' });
+      cookies.set('orders', newState, { path: '/' });
     }
   }
   render(){
@@ -48,9 +52,10 @@ export default class App extends React.Component{
       <div>
         <Header selectedMenu="products"/>
         <Welcome title="Products"/>
-        <Products productData={this.state.productData} addToCart={this.addToCart} orders={this.state.orders} removeOfCart={this.removeOfCart}/>
+        <Products productData={this.state.productData} addToCart={this.addToCart} orders={this.state.orders}/>
         <ButtonCart productData={this.state.productData} orders={this.state.orders} removeOfCart={this.removeOfCart} />
       </div>
     )
   }
 }
+
