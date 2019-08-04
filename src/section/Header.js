@@ -31,15 +31,15 @@ export class Header extends React.Component{
                 <Menu.Item key="products">
                     <Link to="/products"><Icon type="appstore" /> Products</Link>
                 </Menu.Item>
-                <Menu.Item key="cart">
-                <Icon type="shopping-cart" /> cart
+                <Menu.Item key="pig">
+                <Icon type="shopping-cart" /> invoice
                 </Menu.Item>
                 <SubMenu title={<span><Icon type="mail" /> Contact Us</span>}>
                     <Menu.Item key="telegram">
                       <Link to="/telegram"><Icon type="mobile" /> telegram</Link>
                     </Menu.Item>
-                    <Menu.Item key="phone">
-                      <Link to="/phone"><Icon type="phone" /> Phone</Link>
+                    <Menu.Item key="message">
+                      <Link to="/message"><Icon type="message" /> message</Link>
 
                     </Menu.Item>
                 </SubMenu>

@@ -8,8 +8,8 @@ import { BrowserRouter as Router, Route, hashHistory } from "react-router-dom";
 import { About } from './About';
 import { Home } from './Home';
 import { Telegram } from './Telegram';
-import { Phone } from './Phone';
 import App from './App';
+import { Message } from './Message';
 
 
 export class Index extends React.Component{
@@ -27,7 +27,7 @@ export class Index extends React.Component{
         <Route path="/" exact component={Home} />
         <Route path="/about" component={About}/>
         <Route path="/telegram" component={Telegram} />
-        <Route path="/phone" component={Phone} />
+        <Route path="/message" component={Message} />
         <Route path="/products" component={App}/>
         {/* <Route path="/products" render={ () => <Products productData={this.state.productData} addToCart={this.addToCart} orders={this.state.orders} removeOfCart={this.removeOfCart} />}/> */}
       </Router>
